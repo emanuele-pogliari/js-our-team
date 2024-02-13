@@ -33,17 +33,16 @@ const team = [
 ];
 
 
-for (worker of team) {
-    console.log(worker);
-}
+const listElement = document.querySelector("#list");
 
 for (let i = 0; i < team.length; i++) {
-
+    let strings = "";
     const worker = team[i];
-
     for (let key in worker) {
-
-        console.log(`${key}: ${worker[key]}`)
-
+        strings += `${key}: ${worker[key]} `;
     }
+    listElement.innerHTML += `<li>${strings}</li>`
+
 }
+
+
