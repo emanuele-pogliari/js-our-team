@@ -1,7 +1,7 @@
 const team = [
     {
-        nome: "Wayne",
-        ruolo: "Barnett",
+        nome: "Wayne Barnett",
+        ruolo: "Founder & CEO",
         foto: "wayne-barnett-founder-ceo.jpg",
     },
 
@@ -30,4 +30,20 @@ const team = [
         ruolo: "Graphic Designer",
         foto: "barbara-ramos-graphic-designer.jpg",
     }
-]
+];
+
+
+for (worker of team) {
+    console.log(worker);
+}
+
+for (let i = 0; i < team.length; i++) {
+
+    const worker = team[i];
+
+    for (let key in worker) {
+
+        console.log(`${key}: ${worker[key]}`)
+
+    }
+}
