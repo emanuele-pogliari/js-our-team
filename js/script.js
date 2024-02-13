@@ -8,7 +8,7 @@ const team = [
     {
         nome: "Angela Caroll",
         ruolo: "Chief Editor",
-        foto: "walter-gordon-office-manager.jpg",
+        foto: "angela-caroll-chief-editor.jpg",
     },
     {
         nome: "Walter Gordon",
@@ -39,6 +39,10 @@ for (let i = 0; i < team.length; i++) {
     let strings = "";
     const worker = team[i];
     for (let key in worker) {
+
+        if (key == "foto") {
+            worker.foto = `<img src=./img/${worker['foto']}>`
+        }
         strings += `${key}: ${worker[key]} `;
     }
     listElement.innerHTML += `<li>${strings}</li>`
