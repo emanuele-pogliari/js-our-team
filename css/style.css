@@ -1,3 +1,27 @@
 body {
     background: #f5f5f1;
+    font-family: "Nunito", sans-serif;
+}
+
+@font-face {
+    font-family: "Gianotten";
+    src: url(../fonts/GianottenLTPro-Regular.woff2);
+}
+
+h1 {
+    font-size: 25px;
+}
+
+.text-name {
+    font-family: 'Gianotten';
+    letter-spacing: -1px;
+}
+
+.my-text-color {
+    color: #7d7771;
+}
+
+.my-text-color:first-child {
+    font-size: 13px;
+    line-height: 30px;
 }

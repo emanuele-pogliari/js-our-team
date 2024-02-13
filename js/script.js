@@ -1,3 +1,4 @@
+// create an array of objects
 const team = [
     {
         nome: "Wayne Barnett",
@@ -32,15 +33,17 @@ const team = [
     }
 ];
 
-
-const listElement = document.querySelectorAll(".my-list");
+// select card elements
 const cardElement = document.querySelectorAll(".my-card");
 
+// for every objects of the array create and inizialize 3 variables that will store values that will be passed on html page, also create a variable that will cointain every single object
 for (let i = 0; i < team.length; i++) {
     let name = "";
     let role = "";
     let imgs = "";
     const worker = team[i];
+
+    // for every keys of every object check what key is stored and assign the right value with all conditionals
     for (let key in worker) {
         if (key == "foto") {
             imgs += `<img class="img-fluid" src="./img/${worker['foto']}">`
@@ -48,13 +51,15 @@ for (let i = 0; i < team.length; i++) {
         else if (key == "nome") {
             name += `${worker[key]}`;
         }
-        else if (key = "ruolo") {
+        else {
             role += `${worker[key]}`;
         }
     }
+
+    // print elements to html page
     cardElement[i].innerHTML += imgs;
-    cardElement[i].innerHTML += `<div class="text-center pt-3">${name}</div>`
-    cardElement[i].innerHTML += `<div class="text-center pt-2 pb-3">${role}</div>`
+    cardElement[i].innerHTML += `<div class="my-text-color text-name fs-5 text-center pt-3 fw-bold">${name}</div>`
+    cardElement[i].innerHTML += `<div class="my-text-color text-center pt-2 pb-3 small">${role}</div>`
 }
 
 
