@@ -33,23 +33,28 @@ const team = [
 ];
 
 
-const listElement = document.querySelector("#list");
+const listElement = document.querySelectorAll(".my-list");
+const cardElement = document.querySelectorAll(".my-card");
 
 for (let i = 0; i < team.length; i++) {
-    let strings = "";
+    let name = "";
+    let role = "";
+    let imgs = "";
     const worker = team[i];
     for (let key in worker) {
-
         if (key == "foto") {
-            strings += `<img src="./img/${worker['foto']}">`
+            imgs += `<img class="img-fluid" src="./img/${worker['foto']}">`
         }
-        else {
-            strings += `${key}: ${worker[key]} <br>`;
-
+        else if (key == "nome") {
+            name += `${worker[key]}`;
+        }
+        else if (key = "ruolo") {
+            role += `${worker[key]}`;
         }
     }
-    listElement.innerHTML += `<li>${strings}</li>`
-
+    cardElement[i].innerHTML += imgs;
+    cardElement[i].innerHTML += `<div class="text-center pt-3">${name}</div>`
+    cardElement[i].innerHTML += `<div class="text-center pt-2 pb-3">${role}</div>`
 }
 
 
