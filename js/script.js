@@ -41,9 +41,12 @@ for (let i = 0; i < team.length; i++) {
     for (let key in worker) {
 
         if (key == "foto") {
-            worker.foto = `<img src=./img/${worker['foto']}>`
+            strings += `<img src="./img/${worker['foto']}">`
         }
-        strings += `${key}: ${worker[key]} `;
+        else {
+            strings += `${key}: ${worker[key]} <br>`;
+
+        }
     }
     listElement.innerHTML += `<li>${strings}</li>`
 
